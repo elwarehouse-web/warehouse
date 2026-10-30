@@ -1,0 +1,4 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>مخازن قطع الغيار</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><div><b>🔧 نظام إدارة مخازن قطع الغيار</b><small>النسخة الأولى</small></div>{% if user %}<span>{{ user.username }} · {{ "مدير" if user.role=="admin" else "موظف" }} · <a href="/logout">خروج</a></span>{% endif %}</header>
+{% if user %}<nav><a href="/">الرئيسية</a><a href="/parts">الأصناف</a><a href="/stock">الأرصدة</a><a href="/movement">إضافة / صرف</a><a href="/transfers">تحويل بين المخازن</a><a href="/reports">تقارير النواقص</a><a href="/history">سجل الحركات</a>{% if user.role=="admin" %}<a href="/users">المستخدمون</a>{% endif %}</nav>{% endif %}
+<main>{% block content %}{% endblock %}</main><footer>نظام مخازن قطع الغيار · احرص على النسخ الاحتياطي الدوري</footer></body></html>
